@@ -53,7 +53,7 @@ module.exports = function(RED) {
 						clientId : clientId,
 						region : n.region,
 						protocol: 'mqtts',
-						keepalive: 1200
+						keepalive: 0
 					});
 				}
 				if (self.device) {
