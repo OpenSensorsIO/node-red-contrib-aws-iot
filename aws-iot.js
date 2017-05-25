@@ -52,7 +52,8 @@ module.exports = function(RED) {
 						caPath : caPath,
 						clientId : clientId,
 						region : n.region,
-						protocol: 'mqtts'
+						protocol: 'mqtts',
+						keepalive: 1200
 					});
 				}
 				if (self.device) {
@@ -120,7 +121,7 @@ module.exports = function(RED) {
 								if ( typeof payload === "string") {
 								} else {
 									payload = payload.toString();
-								}								
+								}
 								console.log("RECV<", topic, payload);
 								self.send({
 									topic : topic,
